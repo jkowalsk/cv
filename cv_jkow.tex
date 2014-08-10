@@ -17,6 +17,7 @@
 %\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
 
 % adjust the page margins
+\usepackage{a4wide}
 \usepackage[scale=0.75]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
@@ -55,34 +56,58 @@
 %\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
+\section{Compétences}
+\cvitem{Cryptographie}{
+\begin{itemize}
+\item Cryptographie à clef publique, symétrique, à base de pairing (IBE/ABE)
+\item Protocoles cryptographiques (authentification, échange de clef)
+\item Conception de produits de sécurité
+\end{itemize}}
+\cvdoubleitem{Méthodologie}{
+\begin{itemize}
+\item Critères Communs
+\item Méthode EBIOS
+\end{itemize}}{}{
+\begin{itemize}
+\item Analyses de sécurité produit
+\item Aspects réglementaires
+\end{itemize}}
+\cvitem{Programmation}{C, C++, Java, Javacard}
+\cvitem{Office}{Traitement de texte, tableur, \LaTeX}
 
 \section{Expérience professionnelle}
-\subsection{Ingénieur en cryptographie}
-%\job{Ingénieur en cryptographie chez Mobiquant }
-%{03/09 - 05/09 }
-%{- recherche de failles de sécurité sur le produit existant\\
-%\> - conception et développement de solutions de sécurisation pour ce produit
-%}
-%
-%\job{Ingénieur crypto-mathématicien au Ministère de la Défense }
-%{\ \  2004 - 2009 }
-%{  Habilitation niveau secret défense\\
-%\> - \textbf{Conception et développement de produits de sécurité :}
-%   Etude du besoin et des menaces associées ; \\
-%\> Conception et développement de solutions de sécurité; de bibliothèques cryptographiques\\
-%\> - \textbf{Analyse de solutions de sécurité : }\\
-%\> Etudes de sécurité inspirées des méthodes Critères Communs ;
-% Méthode EBIOS\\
-%\> - \textbf{Evaluation de produits civils :}
-%Suivi technique d'évaluation de produits de sécurité
-%}
-
-\cventry{2004--2009 }{Ingénieur crypto-mathématicien}{Ministère de la Défense}{}{}{Habilitation niveau secret défense
+%\subsection{Ingénieur en cryptographie}
+\cventry{2009--}{Ingénieur en cryptographie}{Ercom}{}{}{
 \begin{itemize}
-\item \textbf{Conception et développement de produits de sécurité :} 
+\item \textbf{Spécifications} du produit CryptoSmart 
 	\begin{itemize}
-	\item \'Etude du besoin et des menaces associées
-	\item Conception et développement de solutions de sécurité; de bibliothèques cryptographiques
+	\item Architecture du produit ;
+	\item Spécifications et développements cryptographiques ;
+	\item Tenue à jour de l'espace documentaire
+	\end{itemize}	
+\item Responsable de \textbf{l'évaluation Critères Communs} de la carte CryptoSmart (EAL4+)
+\item \textbf{Veille technologique} : Identity/Attribute Based Cryptography, pairings, etc.
+\end{itemize}
+}
+\cventry{08/09--10/09}{Consultant en cryptographie}{Alten}{}{Mission : Thalès Communication}{
+\begin{itemize}
+\item Participation aux spécifications 
+\item Définition de l'architecture de clef
+\end{itemize}
+}
+\cventry{03/09--05/09}{Ingénieur en cryptographie}{Mobiquant}{}{}{
+\begin{itemize}
+\item Recherche de failles de sécurité sur le produit existant
+\item Sécurisation du produit
+\end{itemize}
+}
+\cventry{2004--2009 }{Ingénieur crypto-mathématicien}{Ministère de la Défense}{}{Habilitation niveau secret défense}{
+\begin{itemize}
+\item \textbf{Développement de produits de sécurité :} 
+	\begin{itemize}
+	\item \'Etude du besoin et des menaces associées ;
+	\item Conception et développement de solutions de sécurité ;
+	\item Conception et développement de bibliothèques cryptographiques
 	\end{itemize}
 \item \textbf{Analyse de solutions de sécurité : } \'Etudes de sécurité inspirées des méthodes Critères Communs ; Méthode EBIOS
 \item \textbf{\'Evaluation de produits civils :} Suivi technique d'évaluation de produits de sécurité
@@ -90,71 +115,19 @@
 }
 \cventry{2004}{Stage de fin d'études}{Ministère de la Défense}{}{}{Bases de Gr\oe bner : application  à la cryptanalyse de registres à décalage linéaire filtrés}
 
-%\cventry{year--year}{Job title}{Employer}{City}{}{General description no longer than 1--2 lines.\newline{}%
-%Detailed achievements:%
-%\begin{itemize}%
-%\item Achievement 1;
-%\item Achievement 2, with sub-achievements:
-%  \begin{itemize}%
-%  \item Sub-achievement (a);
-%  \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
-%    \begin{itemize}
-%    \item Sub-sub-achievement i;
-%    \item Sub-sub-achievement ii;
-%    \item Sub-sub-achievement iii;
-%    \end{itemize}
-%  \item Sub-achievement (c);
-%  \end{itemize}
-%\item Achievement 3.
-%\end{itemize}}
-%\cventry{year--year}{Job title}{Employer}{City}{}{Description line 1\newline{}Description line 2}
-
 \subsection{Enseignement}
 \cventry{2002--2003}{Colleur en mathématiques spéciales}{Lycée du Parc de Loges (91)}{}{}{}
 \cventry{2002--2003}{Professeur de Mathématiques}{\'Education Nationale, Rectorat de Bordeaux}{}{}{}
 
-\section{Languages}
-\cvitemwithcomment{Language 1}{Skill level}{Comment}
-\cvitemwithcomment{Language 2}{Skill level}{Comment}
-\cvitemwithcomment{Language 3}{Skill level}{Comment}
+\section{Langues}
+\cvitemwithcomment{Anglais}{Courant}{}
 
-\section{Computer skills}
-\cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
-
-\section{Education}
-\cventry{year--year}{Degree}{Institution}{City}{\textit{Grade}}{Description}  % arguments 3 to 6 can be left empty
-\cventry{year--year}{Degree}{Institution}{City}{\textit{Grade}}{Description}
-
-\section{Interests}
-\cvitem{hobby 1}{Description}
-\cvitem{hobby 2}{Description}
-\cvitem{hobby 3}{Description}
-
-\section{Extra 1}
-\cvlistitem{Item 1}
-\cvlistitem{Item 2}
-\cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
-
-\section{Extra 2}
-\cvlistdoubleitem{Item 1}{Item 4}
-\cvlistdoubleitem{Item 2}{Item 5\cite{book1}}
-\cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
-
-\section{References}
-\begin{cvcolumns}
-  \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
-  \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
-  \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
-\end{cvcolumns}
-
-% Publications from a BibTeX file without multibib
-%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
-%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+\section{Formation}
+\cvitem{Stages}{Cryptologie (DCSSI) ; méthode EBIOS (DCSSI); Critères Communs (DCSSI)}
+\cventry{2003--2004}{\textbf{DESS Sécurité de l'information}}{Université de Limoges.}{}{}{Mention Bien}
+\cventry{2002--2003}{Licence d'informatique}{Université d'Evry Val d'Essonnes}{}{}{Mention Bien}
+\cventry{2000}{CAPES de Mathématiques}{}{}{}{}
+\cventry{1997--1999}{Licence et Maîtrise de Mathématiques}{Université d'Evry Val d'Essonnes}{}{}{Mentions Bien et Assez Bien}
 
 % Publications from a BibTeX file using the multibib package
 %\section{Publications}
