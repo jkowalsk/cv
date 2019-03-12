@@ -4,6 +4,18 @@
 
 \documentclass[10pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
+%\usepackage{roboto}
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage{a4wide}
+\usepackage[scale=0.75]{geometry}
+\recomputelengths
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
 % moderncv themes
 \moderncvtheme[blue]{classic}
 
@@ -12,28 +24,18 @@
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 %\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
-% character encoding
-\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
-%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
-
-% adjust the page margins
-\usepackage{a4wide}
-\usepackage[scale=0.75]{geometry}
-%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
-%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 % personal data
 \firstname{Julien}
 \familyname{Kowalski}
-%\name{Julien}{Kowalski}
 \title{Ingénieur en cryptographie}                               % optional, remove / comment the line if not wanted
-\address{23, rue des prés renards}{89290 VENOY}%{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\address{2, impasse Alain Colas}{35580 GUICHEN}%{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
 \phone[mobile]{06 30 75 10 88}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
 %\phone[fixed]{+2~(345)~678~901}
 %\phone[fax]{+3~(456)~789~012}
 \email{kowalski.julien@gmail.com}	% optional, remove / comment the line if not wanted
 %\homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
-%\social[linkedin]{john.doe}                        % optional, remove / comment the line if not wanted
+%\social[linkedin]{julien.kowalski}                 % optional, remove / comment the line if not wanted
 %\social[twitter]{jdoe}                             % optional, remove / comment the line if not wanted
 %\social[github]{jdoe}                              % optional, remove / comment the line if not wanted
 %\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
@@ -54,34 +56,37 @@
 %----------------------------------------------------------------------------------
 \begin{document}
 \vspace*{-5\baselineskip}
-%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
 %-----       resume       ---------------------------------------------------------
-\makecvtitle
+\maketitle
 \vspace*{-2\baselineskip}
+
 \section{Compétences}
 \cvitem{Cryptographie}{
 \begin{itemize}
 \item Cryptographie à clef publique, symétrique, à base de pairing (IBE/ABE)
 \item Protocoles cryptographiques (authentification, échange de clef)
 \item Conception de produits de sécurité
-\end{itemize}}
+\end{itemize}
+}
 \vspace*{-\baselineskip}
 \cvitem{Méthodologie}{
-Critères Communs, Analyses de sécurité produit, Aspects réglementaires, EBIOS
+Critères Communs, Analyses de sécurité produit, Aspects réglementaires
 }
-\cvitem{Développement}{C, C++, Java, Javacard}
-\cvitem{Office}{Traitement de texte, tableur, \LaTeX}
+\cvitem{Développement}{C, C++, Rust, Java, Javacard}
 
 \section{Expérience professionnelle}
 %\subsection{Ingénieur en cryptographie}
 \cventry{2009 --}{Ingénieur en cryptographie}{Ercom}{}{}{
 \begin{itemize}
-\item \textbf{Spécifications} du produit Cryptosmart (Mobile sécurisé, Voix chiffrée, VPN)
-	\begin{itemize}
-	\item Architecture et du produit ;
-	\item Spécifications et développements cryptographiques ;
-	\end{itemize}	
-\item Responsable de \textbf{l'évaluation Critères Communs} de la carte Cryptosmart (EAL4+)
+\item  Architecture logicielle et de sécurité; 
+\item Spécifications et développements cryptographiques des produit Ercom (Cryptosmart; Cryptopass et Cryptobox)
+\item Responsable des \textbf{évaluations Critères Communs} 
+\begin{itemize}
+	\item Carte Cryptosmart (certificats
+	  \href{https://www.ssi.gouv.fr/uploads/2016/11/anssi-cc-2016_69fr.pdf}{ANSSI-CC-2016/69} ;
+	  \href{https://www.ssi.gouv.fr/uploads/IMG/certificat/ANSSI-CC_2012-71fr.pdf}{ANSSI-CC-2012/71})
+	\item Produit Cryptobox (\href{https://www.ssi.gouv.fr/uploads/2018/06/anssi-cible-cc-2018_23en.pdf}{cible}; certificat \href{https://www.ssi.gouv.fr/uploads/2018/06/anssi-cc-2018_23fr.pdf}{ANSSI-CC-2018/23})
+\end{itemize}
 \item \textbf{Innovation}
 	\begin{itemize}
 	\item Veille technologique: Identity/Attribute Based Cryptography, pairings, searchable encryption, anonymat.
@@ -92,23 +97,13 @@ Critères Communs, Analyses de sécurité produit, Aspects réglementaires, EBIO
 }
 \cventry{08/09 -- 10/09}{Consultant en cryptographie}{Alten}{}{Mission : Thalès Communication}{
 \begin{itemize}
-\item Participation aux spécifications 
-\item Définition de l'architecture de clef
+\item Participation aux spécifications et définition de l'architecture de clef
 \end{itemize}
 }
-\cventry{03/09 -- 05/09}{Ingénieur en cryptographie}{Mobiquant}{}{}{
-\begin{itemize}
-\item Recherche de failles de sécurité sur le produit existant
-\item Sécurisation du produit
-\end{itemize}
-}
-\cventry{2004 -- 2009 }{Ingénieur crypto-mathématicien}{Ministère de la Défense}{}{Habilitation niveau secret défense}{
+
+\cventry{2004 -- 2009 }{Ingénieur crypto-mathématicien}{Ministère de la Défense}{}{Habilitation SD}{
 \begin{itemize}
 \item \textbf{Développement de produits de sécurité :} 
-	\begin{itemize}
-	\item \'Etude du besoin et des menaces associées
-	\item Conception et développement de solutions de sécurité
-	\end{itemize}
 \item \textbf{Analyse de solutions de sécurité : } \'Etudes de sécurité inspirées des Critères Communs et d'EBIOS
 \item \textbf{\'Evaluation de produits civils :} Suivi technique d'évaluation de produits de sécurité
 \end{itemize}
@@ -123,11 +118,11 @@ Critères Communs, Analyses de sécurité produit, Aspects réglementaires, EBIO
 \cvitemwithcomment{Anglais}{Courant}{}
 
 \section{Formation}
-\cvitem{Stages}{Cryptologie (DCSSI) ; méthode EBIOS (DCSSI); Critères Communs (DCSSI)}
-\cventry{2003 -- 2004}{\textbf{DESS Sécurité de l'information}}{Université de Limoges.}{}{}{Mention Bien}
-\cventry{2002 -- 2003}{Licence d'informatique}{Université d'Evry Val d'Essonnes}{}{}{Mention Bien}
-\cventry{2000}{CAPES de Mathématiques}{}{}{}{}
-\cventry{1997 -- 1999}{Licence et Maîtrise de Mathématiques}{Université d'Evry Val d'Essonnes}{}{}{Mentions Bien et Assez Bien}
+\cvitem{Stages}{Cryptologie (CFSSI) ; méthode EBIOS (CFSSI); Critères Communs (CFSSI)}
+\cventry{2003 -- 2004}{\textbf{DESS Sécurité de l'information}}{Université de Limoges.}{Mention Bien}{}{}
+%\cventry{2002 -- 2003}{Licence d'informatique}{Université d'Evry Val d'Essonnes}{}{}{Mention Bien}
+%\cventry{2000}{CAPES de Mathématiques}{}{}{}{}
+%\cventry{1997 -- 1999}{Licence et Maîtrise de Mathématiques}{Université d'Evry Val d'Essonnes}{}{}{Mentions Bien et Assez Bien}
 
 % Publications from a BibTeX file using the multibib package
 %\section{Publications}
