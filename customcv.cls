@@ -148,7 +148,7 @@
 
 \newcommand{\printphone}{
   \ifthenelse{\equal{\cvnumberphone}{}}{}{
-    \printuserinfo{\large \faMobile}{\cvnumberphone}
+    \printuserinfo{\large \faMobile}{\href{tel:\cvnumberphone}{\cvnumberphone}}
   }
 }
 
