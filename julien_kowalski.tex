@@ -1,0 +1,127 @@
+\documentclass[a4paper]{customcv}
+
+\bibliography{biblio.bib}
+
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
+
+\cvname{Julien Kowalski}
+\cvjobtitle{ Ingénieur en cryptographie } 
+
+\cvlinkedin{julien-kowalski-002b99105}
+\cvgithub{jkowalsk}
+\cvnumberphone{(+33) 6 30 75 10 88} % Phone number
+\cvsite{} % Personal website
+\cvmail{kowalski.julien@gmail.com} 
+
+%----------------------------------------------------------------------------------------
+%	 Skills definition
+%----------------------------------------------------------------------------------------
+\skills{
+  \resizebox{\textwidth}{!}{
+    \centering 
+    \smartdiagram[bubble diagram]{
+      \textbf{Sécurité} \\ \textbf{de l'information},
+      ~~~~~~\textbf{Cryptographie}~~~~~~ \\ spécifications,
+      ~~~~\textbf{Cryptographie}~~~~ \\ implémentation,
+      ~~~~~~~~~~~~\textbf{Critères}~~~~~~~~~~~~ \\ \textbf{Communs},
+      \textbf{Architecture}\\ \textbf{logicielle},
+      ~~~~\textbf{Architecture}~~~~\\ \textbf{sécurité}
+    }
+  }
+}
+
+% skill bars
+\skillbars{%
+  {Rust $\bullet$ Python / 3},%
+  {C $\bullet$ C++ $\bullet$ Java  / 4.5},% 
+  {JavaCard $\bullet$ \large \LaTeX / 5.5}%
+}
+
+%----------------------------------------------------------------------------------------
+%	 Education part
+%----------------------------------------------------------------------------------------
+\education{
+  \textbf{Stages (CFSSI)} \\
+  Cryptologie $\bullet$ méthode EBIOS $\bullet$ Critères Communs
+  
+  \textit{2004} -- \textbf{DESS Sécurité de l'information} \\
+  Université de Limoges. \\
+  Mention Bien
+  
+  \textit{2003} -- \textbf{Licence d'informatique} \\
+  Université d'Evry Val d'Essonnes. \\
+  Mention Bien
+  
+  \textit{2000} -- \textbf{CAPES de Mathématiques}
+  
+  \textit{1999} -- \textbf{Maîtrise de Mathématiques} \\
+  Université d'Evry Val d'Essonnes. \\
+  Mention Assez Bien
+  
+  \textit{1998} -- \textbf{Licence de Mathématiques} \\
+  Université d'Evry Val d'Essonnes. \\
+  Mention Bien
+  
+}
+
+
+\begin{document}
+\makeprofile
+%----------------------------------------------------------------------------------------
+%	 EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Expérience}
+
+\begin{cventry}{2009 -- }{Ingénieur en cryptographie}{\href{https://www.ercom.fr/}{Ercom}}
+  \begin{itemize}
+    \item  Architecture logicielle et de sécurité;
+    \item Spécifications et développements cryptographiques des produits Ercom (Cryptosmart; Cryptopass et Cryptobox)
+    \item Responsable des \textbf{évaluations Critères Communs}
+          \begin{itemize}
+            \item Carte Cryptosmart (\cite{anssi.2012/71} ; \cite{anssi.2016/69})
+            \item Cryptobox \cite{anssi.2018/23}
+          \end{itemize}
+    \item \textbf{Innovation}
+          \begin{itemize}
+            \item IBE, ABE, pairings, searchable encryption, anonymat.
+            \item Dépôt de brevets (\cite{pat.save}, \cite{pat.card.auth})
+          \end{itemize}
+    \item Relations avec l'ANSSI
+  \end{itemize}
+\end{cventry}
+
+\begin{cventry}{2009}{Consultant en cryptographie}{Alten}
+  En mission pour Thalès Communication
+  \begin{itemize}
+    \item Participation aux spécifications du projet
+    \item Définition de l'architecture de clefs
+  \end{itemize}
+\end{cventry}
+
+\begin{cventry}{2004 - 2009}{Ingénieur crypto-mathématicien}{Ministère de la Défense}
+  \begin{itemize}
+    \item \textbf{Développement de produits de sécurité:}
+          \begin{itemize}
+            \item \'Etude du besoin et des menaces associées
+            \item Conception et développement de solutions de sécurité
+          \end{itemize}
+    \item \textbf{Analyse de solutions de sécurité : }
+          \'Etudes de sécurité inspirées des Critères Communs et d'EBIOS
+    \item \textbf{\'Evaluation de produits civils :} Suivi technique d'évaluation de produits de sécurité
+  \end{itemize}
+\end{cventry}
+
+\begin{cventry}{2004}{Stage de fin d'études}{Ministère de la Défense}
+  Bases de Gr\oe bner : application  à la cryptanalyse de registres à décalage linéaire filtrés.
+\end{cventry}
+
+%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+\subsection{Enseignements}
+\cventrynobody{2002 -- 2003}{Colleur en mathématiques spéciales}{\'Education Nationale}
+\cventrynobody{2000 -- 2002}{Professeur de Mathématiques}{\'Education Nationale}
+
+
+\end{document}
