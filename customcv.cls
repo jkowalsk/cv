@@ -188,7 +188,7 @@
   \end{tikzpicture}
   \begin{textblock}{0.3}(0.02, 0.02)
     \vbox to .97\textheight{
-      {\Huge\color{cvblue}\cvname}\\
+      {\Huge\color{cvblue}\textsc{\cvname}}\\
       {\Large\color{black!80}\cvjobtitle}
       %------------------------------------------------
       \vspace{3mm}
