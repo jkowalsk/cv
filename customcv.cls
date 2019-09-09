@@ -68,6 +68,8 @@
   citecolor=black,
 }
 
+\setfontfamily{\FA}{[FontAwesome.otf]}
+
 %----------------------------------------------------------------------------------------
 %	 FANCIER 
 %----------------------------------------------------------------------------------------
@@ -261,28 +263,33 @@
 
 %% date ; job title ; company
 \newcommand{\cvtitleformat}[3]{%
-  \begin{tabular}{@{\extracolsep{4pt}}p{0.17\textwidth}p{0.7\textwidth}}
+  \begin{tabular}{@{\extracolsep{4pt}}p{0.2\textwidth}p{0.7\textwidth}}
   #1 & \textbf{#2} \hfill {\footnotesize #3} \\
   \end{tabular}
 
 }
 
-\newtcolorbox{cventry}[3]{%
-  sharp corners,
-  width=\textwidth,
-  coltitle=black,
-  colbacktitle=sidecolor!80,
-  colback=white,
-  title={\cvtitleformat{#1}{#2}{#3}},
-  colframe=cvblue,
-  leftrule=0mm, rightrule=0mm, toprule=0mm, bottomrule=0mm, titlerule=0mm,
-  left=0pt,
-  leftupper=0.05\textwidth,
-}
+%\newtcolorbox{cventry}[3]{%
+%  sharp corners,
+%  width=\textwidth,
+%  coltitle=black,
+%  colbacktitle=sidecolor!80,
+%  colback=white,
+%  title={\cvtitleformat{#1}{#2}{#3}},
+%  colframe=cvblue,
+%  leftrule=0mm, rightrule=0mm, toprule=0mm, bottomrule=0mm, titlerule=0mm,
+%  left=0pt,
+%  leftupper=0.05\textwidth,
+%}
 
 \newcommand{\cventrynobody}[3]{
   \par\colorbox{sidecolor!80}{
     \cvtitleformat{#1}{#2}{#3}
   }
 }
+
+\newenvironment{cventry}[3]{
+	\par\cventrynobody{#1}{#2}{#3}
+	\par
+}{}
   

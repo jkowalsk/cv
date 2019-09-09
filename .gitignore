@@ -3,3 +3,7 @@
 *.out
 *.pdf
 *.synctex.gz
+*.bbl
+*.bcf
+*.blg
+*.xml
