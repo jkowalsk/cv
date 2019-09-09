@@ -190,7 +190,7 @@
   \end{tikzpicture}
   \begin{textblock}{0.3}(0.02, 0.02)
     \vbox to .97\textheight{
-      {\Huge\color{cvblue}\textsc{\cvname}}\\
+      {\huge\color{cvblue}\textsc{\cvname}}\\
       {\Large\color{black!80}\cvjobtitle}
       %------------------------------------------------
       \vspace{3mm}
@@ -263,7 +263,7 @@
 
 %% date ; job title ; company
 \newcommand{\cvtitleformat}[3]{%
-  \begin{tabular}{@{\extracolsep{4pt}}p{0.2\textwidth}p{0.7\textwidth}}
+  \begin{tabular}{@{\extracolsep{4pt}}p{0.18\textwidth}p{0.7\textwidth}}
   #1 & \textbf{#2} \hfill {\footnotesize #3} \\
   \end{tabular}
 
