@@ -120,10 +120,16 @@
 
 % Command for printing skill progress bars
 \newcommand{\skillbarsinternal}{}
-\newcommand\skillbars[1]{
+\newcommand{\skillbarstitle}{}
+\newcommand\skillbars[2][]{
+	\ifthenelse{\equal{#1}{}}{}{
+		\renewcommand{\skillbarstitle}{
+			\profilesubsection{#1}		
+	}
+  }
   \renewcommand{\skillbarsinternal}{
     \begin{tikzpicture}
-      \foreach [count=\i] \x/\y in {#1}{
+      \foreach [count=\i] \x/\y in {#2}{
           \draw[fill=skillgray,skillgray] (0,\i) rectangle (6,\i+0.4);
           \draw[fill=white,skillblue](0,\i) rectangle (\y,\i+0.4);
           \node [above right] at (0,\i+0.35) {\x};
@@ -180,6 +186,8 @@
 
 \newcommand{\sectrule}[2][0pt]{\leavevmode \leaders \hbox to 1pt{\rule[#1]{1pt}{#2}} \hfill \kern 0pt}
 \newcommand{\profilesection}[1]{\vspace{8pt}{\color{black!70} \Large #1 \sectrule[1pt]{0.15\baselineskip}}\\}
+\newcommand{\profilesubsection}[1]{\vspace{8pt}{\color{black!70} \large #1 \sectrule[0.5pt]{0.15\baselineskip}}\\}
+
 
 \setlength{\TPHorizModule}{\paperwidth}
 \setlength{\TPVertModule}{\paperheight}
@@ -189,7 +197,7 @@
     \node [rectangle, fill=sidecolor, anchor=north west, minimum width=0.33\paperwidth, minimum height=\paperheight] (box) at (current page.north west){};
   \end{tikzpicture}
   \begin{textblock}{0.3}(0.02, 0.02)
-    \vbox to .97\textheight{
+    \vbox to .97\textheight{    	
       {\huge\color{cvblue}\textsc{\cvname}}\\
       {\Large\color{black!80}\cvjobtitle}
       %------------------------------------------------
@@ -209,6 +217,7 @@
       \skillinternal
       %------------------------------------------------
       \par\vspace{3mm}
+      \skillbarstitle
       \skillbarsinternal
       %------------------------------------------------
       \ifthenelse{\equal{\educationinternal}{}}{}{
