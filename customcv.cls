@@ -12,7 +12,6 @@
 %	 REQUIRED PACKAGES
 %-----------------------------------------------------------------------	-----------------
 
-\RequirePackage[quiet]{fontspec}
 \RequirePackage[sfdefault]{roboto}
 
 \RequirePackage{pstricks}
@@ -68,7 +67,6 @@
   citecolor=black,
 }
 
-\setfontfamily{\FA}{[FontAwesome.otf]}
 
 %----------------------------------------------------------------------------------------
 %	 FANCIER 

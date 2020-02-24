@@ -1,0 +1,19 @@
+name: CV Compilation
+on: [push, pull_request]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v1
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: julien_kowalski.tex
+      - run: mkdir -p out
+      - run: mv julien_kowalski.pdf out/cv_julien_kowalski.pdf
+      - name: Upload pdf
+        uses: actions/upload-artifact@v1
+        with:
+            name: CV
+            path: ./out
