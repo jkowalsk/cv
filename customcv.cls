@@ -32,7 +32,7 @@
 \RequirePackage{multicol}
 
 
-
+\def\french{0}
 
 %----------------------------------------------------------------------------------------
 %	 MARGINS AND LINKS
@@ -44,15 +44,18 @@
 \newcommand{\skilltitle}{Skills}
 \newcommand{\educationtitle}{Education}
 \DeclareOption{french}{%
-  \RequirePackage[french]{babel}%
-  \RequirePackage[T1]{fontenc}%
-  \renewcommand{\skilltitle}{Compétences}
-  \renewcommand{\educationtitle}{Formation}
+  \def\french{1}
 }
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
+\if \french1
+  \RequirePackage[french]{babel}%
+  \RequirePackage[T1]{fontenc}%
+  \renewcommand{\skilltitle}{Compétences}
+  \renewcommand{\educationtitle}{Formation}
+\fi
 
 %----------------------------------------------------------------------------------------
 %	 COLOURS
