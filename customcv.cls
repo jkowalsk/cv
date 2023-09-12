@@ -27,10 +27,12 @@
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{pbox}
 
-\RequirePackage[french]{babel}
 \RequirePackage{csquotes}
 \RequirePackage{biblatex}
 \RequirePackage{multicol}
+
+
+\def\french{0}
 
 %----------------------------------------------------------------------------------------
 %	 MARGINS AND LINKS
@@ -38,10 +40,22 @@
 
 \RequirePackage[left=0.34\paperwidth,top=0.1cm,right=1cm,bottom=0.1cm,nohead,nofoot]{geometry}
 
+%% Translation options
+\newcommand{\skilltitle}{Skills}
+\newcommand{\educationtitle}{Education}
+\DeclareOption{french}{%
+  \def\french{1}
+}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
+\if \french1
+  \RequirePackage[french]{babel}%
+  \RequirePackage[T1]{fontenc}%
+  \renewcommand{\skilltitle}{Compétences}
+  \renewcommand{\educationtitle}{Formation}
+\fi
 
 %----------------------------------------------------------------------------------------
 %	 COLOURS
@@ -69,7 +83,7 @@
 
 
 %----------------------------------------------------------------------------------------
-%	 FANCIER 
+%	 FANCIER
 %----------------------------------------------------------------------------------------
 \RequirePackage[]{enumitem}
 \setlist[itemize,1]{label={\color{cvblue}$\bullet$}}
@@ -120,10 +134,10 @@
 \newcommand{\skillbarsinternal}{}
 \newcommand{\skillbarstitle}{}
 \newcommand\skillbars[2][]{
-	\ifthenelse{\equal{#1}{}}{}{
-		\renewcommand{\skillbarstitle}{
-			\profilesubsection{#1}		
-	}
+  \ifthenelse{\equal{#1}{}}{}{
+    \renewcommand{\skillbarstitle}{
+      \profilesubsection{#1}
+    }
   }
   \renewcommand{\skillbarsinternal}{
     \begin{tikzpicture}
@@ -149,7 +163,7 @@
 
 %% arg1: icon ; arg2 : text
 \newcommand{\printuserinfo}[2]{
-   \item[#1]  #2
+  \item[#1]  #2
 }
 
 \newcommand{\printphone}{
@@ -195,34 +209,34 @@
     \node [rectangle, fill=sidecolor, anchor=north west, minimum width=0.33\paperwidth, minimum height=\paperheight] (box) at (current page.north west){};
   \end{tikzpicture}
   \begin{textblock}{0.3}(0.02, 0.02)
-    \vbox to .97\textheight{    	
-      {\huge\color{cvblue}\textsc{\cvname}}\\
-      {\Large\color{black!80}\cvjobtitle}
-      %------------------------------------------------
-      \vspace{3mm}
-      {\footnotesize 
-        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-          \printphone
-          \printmail
-          \printsite
-          \printgithub
-          \printlinkedin
-        \end{itemize}
-      }
-      %------------------------------------------------
-      \par\vspace{3mm}
-      \profilesection{Compétences}
-      \skillinternal
-      %------------------------------------------------
-      \par\vspace{3mm}
-      \skillbarstitle
-      \skillbarsinternal
-      %------------------------------------------------
-      \ifthenelse{\equal{\educationinternal}{}}{}{
-        \vfill
-        \profilesection{Formation}
-        \educationinternal
-      }
+    \vbox to .97\textheight{
+    {\huge\color{cvblue}\textsc{\cvname}}\\
+    {\Large\color{black!80}\cvjobtitle}
+    %------------------------------------------------
+    \vspace{3mm}
+    {\footnotesize
+      \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+        \printphone
+        \printmail
+        \printsite
+        \printgithub
+        \printlinkedin
+      \end{itemize}
+    }
+    %------------------------------------------------
+    \par\vspace{3mm}
+    \profilesection{\skilltitle}
+    \skillinternal
+    %------------------------------------------------
+    \par\vspace{3mm}
+    \skillbarstitle
+    \skillbarsinternal
+    %------------------------------------------------
+    \ifthenelse{\equal{\educationinternal}{}}{}{
+      \vfill
+      \profilesection{\educationtitle}
+      \educationinternal
+    }
     }
   \end{textblock}
 }
@@ -271,7 +285,7 @@
 %% date ; job title ; company
 \newcommand{\cvtitleformat}[3]{%
   \begin{tabular}{@{\extracolsep{4pt}}p{0.18\textwidth}p{0.7\textwidth}}
-  #1 & \textbf{#2} \hfill {\footnotesize #3} \\
+    #1 & \textbf{#2} \hfill {\footnotesize #3} \\
   \end{tabular}
 
 }
@@ -296,7 +310,6 @@
 }
 
 \newenvironment{cventry}[3]{
-	\par\cventrynobody{#1}{#2}{#3}
-	\par
+  \par\cventrynobody{#1}{#2}{#3}
+  \par
 }{}
-  

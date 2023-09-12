@@ -10,8 +10,13 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: julien_kowalski.tex
+      - name: Compile LaTeX document - EN
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: julien_kowalski-EN.tex
       - run: mkdir -p out
       - run: mv julien_kowalski.pdf out/cv_julien_kowalski.pdf
+      - run: mv julien_kowalski-EN.pdf out/cv_julien_kowalski-EN.pdf
       - name: Upload pdf
         uses: actions/upload-artifact@v1
         with:
